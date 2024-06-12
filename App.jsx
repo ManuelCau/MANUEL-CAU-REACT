@@ -1,6 +1,7 @@
 import { Message } from "./Message";
 import { HelloWorld } from "./helloWorld";
 import { Welcome } from "./Welcome";
+import { AlertClock } from "./AlertClock";
 
 export function App() {
   return (
@@ -10,6 +11,7 @@ export function App() {
       <HelloWorld />
       <Welcome name="Cavallo" age={27} />
       <Message />
+      <AlertClock/>
     </div>
   );
 }
