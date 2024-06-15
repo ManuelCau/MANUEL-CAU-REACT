@@ -5,6 +5,9 @@ import { AlertClock } from "./AlertClock";
 import { Counter } from "./Counter";
 import { Clock } from "./Clock";
 import { MouseClicker } from "./MouseClicker";
+import { MyForm } from "./MyForm";
+import { InteractiveWelcome } from "./InteractiveWelcome";
+import { Login } from "./Login";
 
 export function App() {
   return (
@@ -18,6 +21,11 @@ export function App() {
       <Counter />
       <Clock />
       <MouseClicker />
+      <MyForm />
+      <hr />
+      <InteractiveWelcome />
+      <hr />
+      <Login />
     </div>
   );
 }

@@ -1,8 +1,7 @@
 export function MouseClicker() {
   function consolePrint(event) {
      console.log(event.target.name);
-    
-   
+     
   }
   function srcPrinting(event){
     return console.log(event.target.src);
