@@ -9,6 +9,7 @@ import { MyForm } from "./MyForm";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
 import { MyLogin } from "./MyLogin";
+import { MyUncontrolledForm } from "./MyUncontrolledForm";
 
 export function App() {
   return (
@@ -29,6 +30,7 @@ export function App() {
       <Login />
       <hr />
       <MyLogin />
+      <MyUncontrolledForm />
     </div>
   );
 }
