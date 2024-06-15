@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Login(onLogin) {
+export function MyLogin(onLogin) {
   const [form, setForm] = useState({});
 
   function handleLogin(event) {
@@ -18,7 +18,7 @@ export function Login(onLogin) {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(form);
+    console.log("Form submitted", form);
 
     onLogin(form);
   }
@@ -27,8 +27,8 @@ export function Login(onLogin) {
   }
 
   return (
-    <form>
-      <h2>The login</h2>
+    <form onSubmit={handleSubmit}>
+      <h2>My login</h2>
       <input
         name="username"
         type="text"
@@ -43,13 +43,12 @@ export function Login(onLogin) {
       />
       <input type="checkbox" name="remember" onChange={handleLogin} />
       <br />
-      <button
-        disabled={!form.username && !form.password}
-        onClick={handleSubmit}
-      >
+      <button type="submit" disabled={!form.username && !form.password}>
         Login!
       </button>
-      <button onClick={handleReset}>Reset</button>
+      <button onClick={handleReset} type="reset">
+        Reset
+      </button>
 
       <pre>{JSON.stringify(form)}</pre>
     </form>

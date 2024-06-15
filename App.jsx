@@ -8,6 +8,7 @@ import { MouseClicker } from "./MouseClicker";
 import { MyForm } from "./MyForm";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
+import { MyLogin } from "./MyLogin";
 
 export function App() {
   return (
@@ -26,6 +27,8 @@ export function App() {
       <InteractiveWelcome />
       <hr />
       <Login />
+      <hr />
+      <MyLogin />
     </div>
   );
 }
