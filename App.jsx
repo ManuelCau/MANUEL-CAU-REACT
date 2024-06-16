@@ -10,6 +10,8 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
 import { MyLogin } from "./MyLogin";
 import { MyUncontrolledForm } from "./MyUncontrolledForm";
+import { MyList } from "./myList";
+import { Colors } from "./Colors";
 
 export function App() {
   return (
@@ -31,6 +33,23 @@ export function App() {
       <hr />
       <MyLogin />
       <MyUncontrolledForm />
+      <hr />
+      <MyList
+        items={[
+          { id: 1, name: "Jane", age: 33 },
+          { id: 2, name: "Kate", age: 20 },
+          { id: 3, name: "John", age: 31 },
+          { id: 4, name: "BIlly", age: 29 },
+          { id: 5, name: "Jane", age: 23 },
+        ]}
+      />
+      <Colors
+        colors={[
+          { id: 1, name: "yellow" },
+          { id: 2, name: "red" },
+          { id: 3, name: "blue" },
+        ]}
+      />
     </div>
   );
 }
