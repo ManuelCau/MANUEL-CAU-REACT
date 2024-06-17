@@ -2,9 +2,14 @@ import { Age } from "./Age";
 
 export function Welcome({ name, age }) {
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "greenyellow",
+        color: "#333",
+      }}
+    >
       <h2>Welcome, {name}!</h2>
-     {/*  <Age age={age} />
+      {/*  <Age age={age} />
       {age >= 18 && <Age age={age} />}
       {age && <Age age={age} />}
       {age >= 18 && age <= 65 && <Age age={age} />}

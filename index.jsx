@@ -1,6 +1,7 @@
 import { App } from "./App";
 // import { HelloWorld } from "./helloWorld";
 import { createRoot } from "react-dom/client";
+import "./index.scss";
 // const helloWorldElement = <HelloWorld />;
 
 // const rootElement = document.getElementById("root");

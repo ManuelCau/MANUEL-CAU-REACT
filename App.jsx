@@ -15,7 +15,7 @@ import { Colors } from "./Colors";
 
 export function App() {
   return (
-    <div>
+    <div className="app">
       <h1>My awesome application</h1>
       <hr />
       <HelloWorld />
