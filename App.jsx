@@ -12,18 +12,18 @@ import { MyLogin } from "./MyLogin";
 import { MyUncontrolledForm } from "./MyUncontrolledForm";
 import { MyList } from "./myList";
 import { Colors } from "./Colors";
+import { Container } from "./container";
 
 export function App() {
   return (
-    <div className="app">
-      <h1>My awesome application</h1>
+    <Container title={<h1>My awesome application!</h1>}>
       <hr />
       <HelloWorld />
       <Welcome name="Cavallo" age={27} />
       <Message />
       <AlertClock />
       <Counter />
-      <Clock />
+      {/* <Clock /> */}
       <MouseClicker />
       <MyForm />
       <hr />
@@ -50,6 +50,6 @@ export function App() {
           { id: 3, name: "blue" },
         ]}
       />
-    </div>
+    </Container>
   );
 }

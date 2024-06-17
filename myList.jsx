@@ -1,6 +1,5 @@
 import { useState } from "react";
 import classes from "./MyList.module.scss";
-
 function MyListItem({ item }) {
   const [counter, setCounter] = useState(0);
 
@@ -23,7 +22,7 @@ export function MyList({ items }) {
   //   const items = names.map((name) => <li>{name}</li>);
 
   return (
-    <ul>
+    <ul className={classes.list}>
       {items.map((item) => (
         <MyListItem key={item.id} item={item} /> //key must be attached to the top most component
         // <li key={item.id}>
