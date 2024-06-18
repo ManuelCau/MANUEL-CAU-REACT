@@ -13,6 +13,7 @@ import { MyUncontrolledForm } from "./MyUncontrolledForm";
 import { MyList } from "./myList";
 import { Colors } from "./Colors";
 import { Container } from "./container";
+import { FocusableInput } from "./FocusableInput";
 
 export function App() {
   return (
@@ -50,6 +51,7 @@ export function App() {
           { id: 3, name: "blue" },
         ]}
       />
+      <FocusableInput />
     </Container>
   );
 }
