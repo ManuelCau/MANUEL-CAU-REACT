@@ -1,18 +1,42 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CounterDisplay } from "./CounterDisplay";
 import classes from "./Counter.module.scss";
 
 export function Counter({ initialValue = 0 }) {
+  const directionRef = useRef(null);
   const [counter, setCounter] = useState(initialValue);
+
   function handleCounterIncrement() {
-    setCounter((c) => c + 1);
+    setCounter((c) => {
+      const newCounter = c + 1;
+      const direction = newCounter > c ? "up" : "down";
+      if (direction !== directionRef.current) {
+        directionRef.current = direction;
+        console.log(`Direzione del cambiamento: ${direction}`);
+      }
+      return newCounter;
+    });
   }
+
   function handleCounterDecrement() {
-    setCounter((c) => c - 1);
+    setCounter((c) => {
+      const newCounter = c - 1;
+      const direction = newCounter > c ? "up" : "down";
+      if (direction !== directionRef.current) {
+        directionRef.current = direction;
+        console.log(`Direzione del cambiamento: ${direction}`);
+      }
+      return newCounter;
+    });
   }
+
   function handleCounterReset() {
-    setCounter(0);
+    setCounter(initialValue);
   }
+
+  useEffect(() => {
+    console.log(directionRef);
+  }, []);
 
   return (
     <div>
