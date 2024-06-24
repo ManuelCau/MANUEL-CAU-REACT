@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { LanguageContext } from "./LanguageContext";
 
 export function Clock() {
   const [date, setDate] = useState(new Date());
+
+  const lang = useContext(LanguageContext);
+
   useEffect(() => {
     setInterval(() => {
       console.log("Uploading date...");
@@ -12,10 +16,13 @@ export function Clock() {
       clearInterval(intervalId);
     };
   }, []);
-
   return (
     <div>
-      <h2>Current time is {date.toLocaleTimeString()}</h2>
+      {lang === "en" ? (
+        <h2>Current time is {date.toLocaleTimeString()}</h2>
+      ) : (
+        <h2>L'orario corrente è {date.toLocaleTimeString()}</h2>
+      )}
     </div>
   );
 }

@@ -14,8 +14,16 @@ import { MyList } from "./myList";
 import { Colors } from "./Colors";
 import { Container } from "./container";
 import { FocusableInput } from "./FocusableInput";
+import { LanguageContext } from "./LanguageContext";
+import { useState } from "react";
 
 export function App() {
+  const [lang, setLang] = useState("en");
+  function handleLanguageButton(event) {
+    setLang(event.target.value);
+    console.log(lang);
+  }
+
   return (
     <Container title={<h1>My awesome application!</h1>}>
       <hr />
@@ -24,7 +32,17 @@ export function App() {
       <Message />
       <AlertClock />
       <Counter />
-      {/* <Clock /> */}
+
+      <select name="LanguageSelector" onChange={handleLanguageButton}>
+        <option value="it">Italiano</option>
+        <option value="en" selected>
+          English
+        </option>
+      </select>
+      <LanguageContext.Provider value={lang}>
+        <Clock />
+      </LanguageContext.Provider>
+      <br />
       <MouseClicker />
       <MyForm />
       <hr />
