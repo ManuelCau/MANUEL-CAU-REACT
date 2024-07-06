@@ -1,9 +1,11 @@
 import { Counter } from "./Counter";
+import { MyForm } from "./MyForm";
 
 function App() {
   return (
     <>
       <Counter />
+      <MyForm />
     </>
   );
 }
