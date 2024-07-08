@@ -16,17 +16,26 @@ import { Container } from "./container";
 import { FocusableInput } from "./FocusableInput";
 import { LanguageContext } from "./LanguageContext";
 import { useState } from "react";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Product } from "./Product";
 export function App() {
-  const [lang, setLang] = useState("en");
+  /*  const [lang, setLang] = useState("en");
   function handleLanguageButton(event) {
     setLang(event.target.value);
     console.log(lang);
-  }
+  } */
 
   return (
     <Container title={<h1>My awesome application!</h1>}>
-      <hr />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Welcome name="Cavallo" />} />
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/:id" element={<Product />} />
+          
+        </Routes>
+      </BrowserRouter>
+      {/* <hr />
       <HelloWorld />
       <Welcome name="Cavallo" age={27} />
       <Message />
@@ -69,7 +78,7 @@ export function App() {
           { id: 3, name: "blue" },
         ]}
       />
-      <FocusableInput />
+      <FocusableInput /> */}
     </Container>
   );
 }

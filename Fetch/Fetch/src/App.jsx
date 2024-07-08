@@ -1,16 +1,24 @@
 import { CurrentLocation } from "./CurrentLocation";
 import { GithubUsers } from "./GithubUsers";
 import { NewGithubUser } from "./NewGithubUser";
+import { Link, Routes, Route } from "react-router-dom";
+import { ShowGithubUser } from "./ShowGithubUser";
 
 function App() {
   return (
     <>
-      <GithubUsers />
-      <br />
-      <NewGithubUser />
-      <br />
-      <CurrentLocation />
+    <Link to="users/manuelcau">User</Link>
+    
+      <Routes>
+        <Route path="/" element={<GithubUsers />} />
+        <Route path="/NewGithubUser" element={<NewGithubUser />} />
+        <Route path="/CurrentLocation" element={<CurrentLocation />} />
+        <Route path="users/:username" element={<ShowGithubUser />} />
+
+      </Routes>
+   
     </>
+
   );
 }
 
