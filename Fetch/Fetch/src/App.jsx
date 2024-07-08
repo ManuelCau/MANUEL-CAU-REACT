@@ -7,18 +7,19 @@ import { ShowGithubUser } from "./ShowGithubUser";
 function App() {
   return (
     <>
-    <Link to="users/manuelcau">User</Link>
-    
+      <Link to="users/manuelcau">User</Link>
+      <br />
+      <Link to="/NewGithubUser">New GithubUser</Link>
+      <br />
+      <Link to="/CurrentLocation">Current Location</Link>
+
       <Routes>
         <Route path="/" element={<GithubUsers />} />
         <Route path="/NewGithubUser" element={<NewGithubUser />} />
         <Route path="/CurrentLocation" element={<CurrentLocation />} />
         <Route path="users/:username" element={<ShowGithubUser />} />
-
       </Routes>
-   
     </>
-
   );
 }
 
