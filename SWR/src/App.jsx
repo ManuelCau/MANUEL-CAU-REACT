@@ -1,16 +1,19 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { SWRGithubUsers } from "./SWRGithubUsers";
+import { NewGithubUser } from "./NewGithubUser";
+import { ShowGithubUser } from "./ShowGithubUser";
 import { Home } from "./Home";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/githubusers" element={<SWRGithubUsers />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/githubusers" element={<SWRGithubUsers />} />
+        <Route path="/NewGithubuser" element={<NewGithubUser />}>
+          <Route path=":username" element={<ShowGithubUser />} />
+        </Route>
+      </Routes>
     </>
   );
 }
