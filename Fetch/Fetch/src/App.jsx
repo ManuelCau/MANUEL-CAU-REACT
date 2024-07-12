@@ -22,6 +22,7 @@ function App() {
           <Route index element={<h2>Add a user and select it</h2>} />
           <Route path=":username" element={<ShowGithubUser />} />
         </Route>
+        <Route path="/GithubUsers" element={<GithubUsers />} />
 
         <Route path="*" element={<h1>404 not found</h1>} />
       </Routes>
